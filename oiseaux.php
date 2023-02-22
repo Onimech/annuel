@@ -8,10 +8,10 @@
 </head>
 <body> 
     <ul>
-            <li> <a href="index.html">Accueil</a> </li>
-            <li> <a href="presentation.html">Les grands ordres d'oiseaux</a> </li>
-            <li> <a href="oiseaux.php">Galerie photos d'oiseaux</a> </li>
-            <li> <a href="profil.php">Infos Utilisateurs</a> </li>
+            <li> <a href="index.php">Accueil</a> </li>
+            <li> <a href="presentation.php">C'est quoi les Playoff de la NBA?</a> </li>
+            <li> <a href="oiseaux.php">Tableau Séries</a> </li>
+            <li> <a href="profil.php">Carte Intéractive</a> </li>
             <li> <a href="utilisateurs.php">Liste utilisateurs</a> </li>
     </ul>
     <h1> Quelques photos d'oiseaux </h1>
