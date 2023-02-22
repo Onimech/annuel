@@ -20,7 +20,33 @@
     <h2> Cette page propose quelques photos d'oiseaux.</h3>
     <p> Les images ci-dessous sont extraites de <a href="http://www.oiseaux.net/photos/robert.hendrick/bec-croise.des.sapins.5.html#monde">ce site </a>
     </p>
-
+    </div>
+<div id="tree">
+    <div class="level">
+        <div class="item">
+          <p>équipe 1 VS équipe 8</p>
+          <p>équipe 4 VS équipe 5</p>
+          <p>équipe 2 VS équipe 7</p>
+          <p>équipe 3 VS équipe 6</p>
+       </div>
+    </div>
+      <div class="level">
+        <div class="item">
+          <p>équipe 1 VS équipe 5</p>
+          <p>équipe 2 VS équipe 6</p>
+        </div>
+    </div>
+    <div class="level">
+        <div class="item">
+          <p>équipe 1 VS équipe 6</p> 
+        </div>
+     </div>
+    <div class="level">
+      <div class="item">
+        <p> équipe 1 VS équipe 6</p>
+      </div>
+     </div>    
+</div>
     <div class="listOiseaux">
         
   
@@ -56,7 +82,6 @@
 
     mysqli_close($connect);
   ?>
-</div>
 
 </body>
 

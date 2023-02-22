@@ -1,3 +1,17 @@
+#tree{
+    display:table;
+    width:60%;
+    vertical-align:middle;
+  }
+  .level{
+    display:table-cell;
+    width:33%;
+    vertical-align:middle;
+  }
+  .item{
+	background-color: blanchedalmond;
+
+  }
 body { 
 	font: 75% georgia, sans-serif;
 	line-height: 1.88889;
