@@ -20,7 +20,7 @@
     </ul>
     <h1> <center>Liste des Joueurs</center></h1>
 
-    <div class="listJoueur">
+
         
     <?php
 
@@ -41,24 +41,23 @@
     //Envoi de la requête
     $reponse = mysqli_query($connect,$requete);
     ?>
- <div class="tabAffichage">
-    <?php
-    //premiere colonne tableau
-    echo "<table border>";
-    echo "<tr>";
-    echo "<td><h2>Nom</h2></td>";
-    echo "<td><h2>Prénom</h2></td>";
-    echo "<td><h2>Âge</h2></td>";
-    echo "<td class tab><h2>Numéro maillot</h2></td>";
-    echo "<td><h2>Poste</h2></td>";
-    echo "<td><h2>Nombre de Titres</h2></td>";
-    echo "<td><h2>Position Draft</h2></td>";
-    echo "<td><h2>Année de Draft</h2></td>";
-    echo "<td><h2>Equipe</h2></td>";
 
-    echo "</tr>";
-    ?>
-    </div>
+
+    <table border>
+
+
+<td class="tabAffichage"><h2>Nom</h2></td>
+<td class="tabAffichage"><h2>Prénom</h2></td>
+<td class="tabAffichage"><h2>Âge</h2></td>
+<td class="tabAffichage"><h2>Numéro <br> maillot</h2></td>
+<td class="tabAffichage"><h2>Poste</h2></td>
+<td class="tabAffichage"><h2>Nombre <br> de Titres</h2></td>
+<td class="tabAffichage"><h2>Position <br> Draft</h2></td>
+<td class="tabAffichage"><h2>Année <br> de Draft</h2></td>
+<td class="tabAffichage"><h2>Equipe</h2></td>
+
+    
+
     <?php
 //données du tableau
     while($ligne = mysqli_fetch_array($reponse))
@@ -84,7 +83,7 @@
     mysqli_close($connect);
   ?>
 
-</div>
+
 
 </body>
 
