@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="UTF8" />
-<title> Oiseaux </title>
+<title> Bracket </title>
 <link rel="stylesheet" media="screen" href="style.css">
 </head>
 <body> 
@@ -21,40 +21,79 @@
     <p> Les images ci-dessous sont extraites de <a href="http://www.oiseaux.net/photos/robert.hendrick/bec-croise.des.sapins.5.html#monde">ce site </a>
     </p>
     </div>
-<div id="tree">
-    <div class="level">
-        <div class="item">
-          <p>équipe 1 VS équipe 8</p>
-          <p>équipe 4 VS équipe 5</p>
-          <p>équipe 2 VS équipe 7</p>
-          <p>équipe 3 VS équipe 6</p>
-       </div>
-    </div>
-      <div class="level">
-        <div class="item">
-          <p>équipe 1 VS équipe 5</p>
-          <p>équipe 2 VS équipe 6</p>
-        </div>
-    </div>
-    <div class="level">
-        <div class="item">
-          <p>équipe 1 VS équipe 6</p> 
-        </div>
-     </div>
-    <div class="level">
-      <div class="item">
-        <p> équipe 1 VS équipe 6</p>
-      </div>
-     </div>    
+<div class="tournament">
+<table>
+<tr>
+  <td>
+  <div id class="form text">ergyihgberherkibgrzike </div>
+  </td>
+  <td>
+  </td>
+  <td>
+  </td>
+  <td>
+  </td>
+  <td>
+  <div id class="form text">ergyihgberherkibgrzike </div>
+  </td>
+</tr>
+<tr>
+  <td>
+  <div id class="form text">ergyihgberherkibgrzike </div>
+  </td>
+  <td>
+  <div id class="form text">ergyihgberherkibgrzike </div>
+  </td>
+  <td>
+  <div id class="form text">ergyihgberherkibgrzike </div>
+  </td>
+  <td>
+  <div id class="form text">ergyihgberherkibgrzike </div>
+  </td>
+  <td>
+  <div id class="form text">ergyihgberherkibgrzike </div>
+  </td>
+</tr>
+<tr>
+  <td>
+  <div id class="form text">ergyihgberherkibgrzike </div>
+  </td>
+  <td>
+  <div id class="form text">ergyihgberherkibgrzike </div>
+  </td>
+  <td>
+  </td>
+  <td>
+  <div id class="form text">ergyihgberherkibgrzike </div>
+  </td>
+  <td>
+  <div id class="form text">ergyihgberherkibgrzike </div>
+  </td>
+</tr>
+<tr>
+  <td>
+  <div id class="form text">ergyihgberherkibgrzike </div>
+  </td>
+  <td>
+  </td>
+  <td>
+  </td>
+  <td>
+  </td>
+  <td>
+  <div id class="form text">ergyihgberherkibgrzike </div>
+  </td>
+</tr>
+</table>  
 </div>
-    <div class="listOiseaux">
+    
         
   
     <? php
     //Connexion
     $user = 'root';
     $password = 'root';
-    $db = 'oiseaux';
+    $db = 'projet a';
     $host = 'localhost';
  
     $connect = mysqli_connect($host, $user, $password, $db);
@@ -64,20 +103,12 @@
       echo "Fail to connect : ".nysqli_connect_errno();
     }
     //Ecriture de la requête 
-    $requete="SELECT nomCommun, photo FROM oiseau;";
+    
     //Envoi de la requête
     $reponse = mysqli_query($connect,$requete);
-    echo "<table>";
-    while($ligne = mysqli_fetch_array($reponse))
-    {
-        echo "<tr>";
-        echo "<td><h3>".$ligne['nomCommun']."</h3></td>";
-        echo "<td><img src=images/photosOiseaux/".$ligne['photo']."</td>";
-        echo "</tr>";
-    }
-    echo "</table>";
-    echo "SAlut tlm c ninho";
-
+    
+    //while($ligne = mysqli_fetch_array($reponse))
+    
     mysqli_free_result($reponse);
 
     mysqli_close($connect);
