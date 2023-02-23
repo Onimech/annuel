@@ -30,16 +30,20 @@
     $db = 'nba_projet';
     $host = 'localhost';
  
-    $connect = mysqli_connect($host, $user, $password, $db);
+    $connexion = new PDO ("mysql:host=$host;dbname=$db", $user, $password);
+    try {$connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo 'Connexion réussie';}
+    catch(PDOException $e){
+        echo "Erreur : " . $e->getMessage();
+      }
+    
 //si erreur
-    if(mysqli_connect_errno())
-        echo "Fail to connect :".mysqli_connect_errno();
 
     //Ecriture de la requête 
     $requete="SELECT * FROM `joueur`;";
 
     //Envoi de la requête
-    $reponse = mysqli_query($connect,$requete);
+   
     ?>
 
 
@@ -60,27 +64,25 @@
 
     <?php
 //données du tableau
-    while($ligne = mysqli_fetch_array($reponse))
-    {
+foreach ($connexion->query($requete) as $colonne) {
         //Affichage des lignes de données, champ par champ
         echo "<tr>";
-        echo "<td><h3>".$ligne['nomJoueur']."</h3></td>";
-        echo "<td><h3>".$ligne['prenomJoueur']."</h3></td>";
-        echo "<td><h3>".$ligne['age']."</h3></td>";
-        echo "<td><h3>".$ligne['nMaillot']."</h3></td>";
-        echo "<td><h3>".$ligne['Poste']."</h3></td>";
-        echo "<td><h3>".$ligne['nTitres']."</h3></td>";
-        echo "<td><h3>".$ligne['PosDraft']."</h3></td>";
-        echo "<td><h3>".$ligne['AnDraft']."</h3></td>";
-        echo "<td><h3>".$ligne['IdEquipe']."</h3></td>";
+        echo "<td><h3>".$colonne['nomJoueur']."</h3></td>";
+        echo "<td><h3>".$colonne['prenomJoueur']."</h3></td>";
+        echo "<td><h3>".$colonne['age']."</h3></td>";
+        echo "<td><h3>".$colonne['nMaillot']."</h3></td>";
+        echo "<td><h3>".$colonne['Poste']."</h3></td>";
+        echo "<td><h3>".$colonne['nTitres']."</h3></td>";
+        echo "<td><h3>".$colonne['PosDraft']."</h3></td>";
+        echo "<td><h3>".$colonne['AnDraft']."</h3></td>";
+        echo "<td><h3>".$colonne['IdEquipe']."</h3></td>";}
 //comment récuperer le nom de l'équpe et pas l'id ??
 
-    }
+    
     echo "</table>";
 
-    mysqli_free_result($reponse);
+  
 
-    mysqli_close($connect);
   ?>
 
 
