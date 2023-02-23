@@ -16,8 +16,8 @@
             <li> <a href="joueurs.php">Liste Joueurs</a> </li>
             <li> <a href="coachs.php">Liste Coachs</a> </li>
     </ul>
-    <h1> Quelques photos d'oiseaux </h1>
-    <h2> Cette page propose quelques photos d'oiseaux.</h3>
+    <h1> Bracket des playoffs </h1>
+    <h2> Conférence Ouest Conférence Est</h2>
     <p> Les images ci-dessous sont extraites de <a href="http://www.oiseaux.net/photos/robert.hendrick/bec-croise.des.sapins.5.html#monde">ce site </a>
     </p>
     </div>
@@ -25,7 +25,7 @@
 <table>
 <tr>
   <td>
-  <div id class="form text">ergyihgberherkibgrzike </div>
+  <div  class="formtext">ergyihgberherkibgrzike </div>
   </td>
   <td>
   </td>
@@ -34,45 +34,45 @@
   <td>
   </td>
   <td>
-  <div id class="form text">ergyihgberherkibgrzike </div>
-  </td>
-</tr>
-<tr>
-  <td>
-  <div id class="form text">ergyihgberherkibgrzike </div>
-  </td>
-  <td>
-  <div id class="form text">ergyihgberherkibgrzike </div>
-  </td>
-  <td>
-  <div id class="form text">ergyihgberherkibgrzike </div>
-  </td>
-  <td>
-  <div id class="form text">ergyihgberherkibgrzike </div>
-  </td>
-  <td>
-  <div id class="form text">ergyihgberherkibgrzike </div>
+  <div  class="formtext">ergyihgberherkibgrzike </div>
   </td>
 </tr>
 <tr>
   <td>
-  <div id class="form text">ergyihgberherkibgrzike </div>
+  <div  class="formtext">ergyihgberherkibgrzike </div>
   </td>
   <td>
-  <div id class="form text">ergyihgberherkibgrzike </div>
+  <div class="formtext2">ergyihgberherkibgrzike </div>
   </td>
   <td>
+  <div class="formtext3">ergyihgberherkibgrzike </div>
   </td>
   <td>
-  <div id class="form text">ergyihgberherkibgrzike </div>
+  <div class="formtext2">ergyihgberherkibgrzike </div>
   </td>
   <td>
-  <div id class="form text">ergyihgberherkibgrzike </div>
+  <div  class="formtext">ergyihgberherkibgrzike </div>
   </td>
 </tr>
 <tr>
   <td>
-  <div id class="form text">ergyihgberherkibgrzike </div>
+  <div class="formtext">ergyihgberherkibgrzike </div>
+  </td>
+  <td>
+  <div class="formtext2">ergyihgberherkibgrzike </div>
+  </td>
+  <td>
+  </td>
+  <td>
+  <div class="formtext2">ergyihgberherkibgrzike </div>
+  </td>
+  <td>
+  <div class="formtext">ergyihgberherkibgrzike </div>
+  </td>
+</tr>
+<tr>
+  <td>
+  <div class="formtext">ergyihgberherkibgrzike </div>
   </td>
   <td>
   </td>
@@ -81,7 +81,7 @@
   <td>
   </td>
   <td>
-  <div id class="form text">ergyihgberherkibgrzike </div>
+  <div class="formtext">ergyihgberherkibgrzike </div>
   </td>
 </tr>
 </table>  
