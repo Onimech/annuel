@@ -40,14 +40,16 @@
 
     //Envoi de la requête
     $reponse = mysqli_query($connect,$requete);
-
+    ?>
+ <div class="tabAffichage">
+    <?php
     //premiere colonne tableau
     echo "<table border>";
     echo "<tr>";
     echo "<td><h2>Nom</h2></td>";
     echo "<td><h2>Prénom</h2></td>";
     echo "<td><h2>Âge</h2></td>";
-    echo "<td><h2>Numéro maillot</h2></td>";
+    echo "<td class tab><h2>Numéro maillot</h2></td>";
     echo "<td><h2>Poste</h2></td>";
     echo "<td><h2>Nombre de Titres</h2></td>";
     echo "<td><h2>Position Draft</h2></td>";
@@ -55,6 +57,9 @@
     echo "<td><h2>Equipe</h2></td>";
 
     echo "</tr>";
+    ?>
+    </div>
+    <?php
 //données du tableau
     while($ligne = mysqli_fetch_array($reponse))
     {
