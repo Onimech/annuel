@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" media="screen" href="style.css">
+    <link rel="stylesheet" media="screen" href="mise_en_page.css">
     <title> Présentation </title>
 </head>
 <body  background="images/oiseauFond.jpg">

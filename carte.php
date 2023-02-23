@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8" />
 <title> Utilisateurs </title>
-<link rel="stylesheet" media="screen" href="style.css">
+<link rel="stylesheet" media="screen" href="mise_en_page.css">
 </head>
 <body> 
     <ul>

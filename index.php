@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF8" />
 <title> Accueil </title>
-<link rel="stylesheet" media="screen" href="style.css">
+<link rel="stylesheet" media="screen" href="mise_en_page.css">
 </head>
 <body  background="images/oiseauFond.jpg"> 
     <ul>
