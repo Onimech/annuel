@@ -5,7 +5,7 @@
 <title> Accueil </title>
 <link rel="stylesheet" media="screen" href="mise_en_page.css">
 </head>
-<body  background="images/oiseauFond.jpg"> 
+<body  background=""> 
     <ul>
             <ul>
             <li> <a href="index.php">Accueil</a> </li>
