@@ -18,7 +18,7 @@
     </ul>
     <h1> <center>Liste des utilisateurs</center></h1>
 
-    <div class="listUser">
+ 
         
     <?php
 
