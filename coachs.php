@@ -53,12 +53,16 @@
 </tr>
 <?php
       foreach ($connexion->query($requete) as $colonne) {
+
         //Affichage des lignes de données, champ par champ
         echo "<tr>";
-        echo "<td><h3><center>".$colonne['prenomCoach']."</h3></td>";
-        echo "<td><h3><center>".$colonne['nomCoach']."</h3></td>";
+        //$name = $colonne['nomCoach'];
+  // echo '<td><h3><center><a href="second_page.php?name='.$name."</td></h3></a>"; rendre les colonnes cliquable pour accéder à la fiche coach (pareil pour joueur et équipe)
+        echo '<td><h3><center>'.$colonne['prenomCoach'].'</h3></td>';
+        echo '<td><h3><center>'.$colonne['nomCoach'].'</h3></td>';
+
         echo '<td><h3><center><img src="data:image/jpeg;base64,' . base64_encode($colonne['PortraitCoach']) . '" height="75px" width="75px" alt="photo" title="logo"/></h3></td>';
-        echo "<td><h3><center>".$colonne['Profil']."</h3></td>";}
+        echo '<td><h3><center>'.$colonne['Profil'].'</h3></td>';}
 
         
 
