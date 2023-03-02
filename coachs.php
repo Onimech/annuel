@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="UTF8" />
-<title> Utilisateurs </title>
+<title> Coach </title>
 <link rel="stylesheet" media="screen" href="mise_en_page.css">
 </head>
 <body> 
@@ -16,7 +16,7 @@
             <li> <a href="joueurs.php">Liste Joueurs</a> </li>
             <li> <a href="coachs.php">Liste Coachs</a> </li>
     </ul>
-    <h1> <center>Liste des utilisateurs</center></h1>
+    <h1> <center>Liste des Coach</center></h1>
 
  
         
@@ -25,45 +25,48 @@
     //Connexion
     $user = 'root';
     $password = 'root';
-    $db = 'oiseaux';
+    $db = 'nba_projet';
     $host = 'localhost';
  
-    $connect = mysqli_connect($host, $user, $password, $db);
+    $connexion = new PDO ("mysql:host=$host;dbname=$db", $user, $password);
 
-    if(mysqli_connect_errno())
-        echo "Fail to connect :".mysqli_connect_errno();
-
+    try {$connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        echo 'Connexion réussie';}
+    catch(PDOException $e){
+        echo "Erreur : " . $e->getMessage();
+      }
+    
     //Ecriture de la requête 
-    $requete="SELECT photo, nomCommun FROM oiseau;";
+    $requete="SELECT * FROM `coach`;";
 
     //Envoi de la requête
-    $reponse = mysqli_query($connect,$requete);
+ ?>
 
-    echo "<table border>";
-    echo "<tr>";
-    echo "<td><h2>nomCommun</h2></td>";
-    echo "<td><h2>photo</h2></td>";
-
-    echo "</tr>";
-
-    while($ligne = mysqli_fetch_array($reponse))
-    {
+<table border>
+    
+    
+ <tr>
+<td class="tabAffichage"><h2>Prénom</h2></td>
+<td class="tabAffichage"><h2>Nom</h2></td>
+<td class="tabAffichage"><h2>Portrait</h2></td>
+<td class="tabAffichage"><h2>Profil</h2></td>
+</tr>
+<?php
+      foreach ($connexion->query($requete) as $colonne) {
         //Affichage des lignes de données, champ par champ
         echo "<tr>";
-        echo "<td><h3>".$ligne['nomCommun']."</h3></td>";
-        echo "<td><h3>".$ligne['photo']."</h3></td>";
+        echo "<td><h3><center>".$colonne['prenomCoach']."</h3></td>";
+        echo "<td><h3><center>".$colonne['nomCoach']."</h3></td>";
+        echo '<td><h3><center><img src="data:image/jpeg;base64,' . base64_encode($colonne['PortraitCoach']) . '" height="75px" width="75px" alt="photo" title="logo"/></h3></td>';
+        echo "<td><h3><center>".$colonne['Profil']."</h3></td>";}
 
-if ($ligne['photo']) 
-            echo"<td><img src=images/photosUsers/".$ligne['photo']." height=40px width =40px> </td>";
-else
-            echo "<td><img src=images/photosUsers/anonyme.png height=40px width=40px> </td>";
-        echo "</tr>";
-    }
+        
+
+//comment récuperer le nom de l'équpe et pas l'id ??
+
+    
     echo "</table>";
 
-    mysqli_free_result($reponse);
-
-    mysqli_close($connect);
   ?>
 
 </div>

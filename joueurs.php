@@ -75,14 +75,14 @@ foreach ($connexion->query($requete) as $colonne) {
         echo "<td><h3>".$colonne['nTitres']."</h3></td>";
         echo "<td><h3>".$colonne['PosDraft']."</h3></td>";
         echo "<td><h3>".$colonne['AnDraft']."</h3></td>";
-        echo "<td><h3>".$colonne['IdEquipe']."</h3></td>";}
+        echo "<td><h3>".$colonne['nomEquipe']."</h3></td>";}
 //comment récuperer le nom de l'équpe et pas l'id ??
 
     
     echo "</table>";
 
   
-
+    $connexion = null;
   ?>
 
 
