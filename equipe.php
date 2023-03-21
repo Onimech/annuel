@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="UTF8" />
-<title> Equipes </title>
+<title> Fiche Equipe </title>
 <link rel="stylesheet" media="screen" href="mise_en_page.css">
 </head>
 <body> 
@@ -16,11 +16,12 @@
             <li> <a href="joueurs.php">Liste Joueurs</a> </li>
             <li> <a href="coachs.php">Liste Coachs</a> </li>
     </ul>
-    <h1> <center>Liste des Equipes</center></h1>
+    <h1> <center>Fiche d'une équipe :</center></h1>
 
     <div class="listUser">
         
     <?php
+/* cette page affichera les informations d'une équipe en particulier */
 
     //Connexion
     $user = 'root';

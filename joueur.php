@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="UTF8" />
-<title> Liste des joueurs </title>
+<title> Fiche Joueur </title>
 <link rel="stylesheet" href="mise_en_page.css">
 </style>
 </head>
@@ -18,12 +18,12 @@
             <li> <a href="joueurs.php">Liste Joueurs</a> </li>
             <li> <a href="coachs.php">Liste Coachs</a> </li>
     </ul>
-    <h1> <center>Liste des Joueurs</center></h1>
+    <h1> <center>Fiche d'un joueur : </center></h1>
 
-
+  
         
     <?php
-
+  /* cette page affichera les informations d'un joueur en particulier en fonction du lien cliqué*/
     //Connexion
     $user = 'root';
     $password = 'root';
