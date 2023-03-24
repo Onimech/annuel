@@ -2,14 +2,17 @@
 <html>
 <head>
 <meta charset="UTF8" />
-<title> Accueil </title>
+<title> Tournoi </title>
 <link rel="stylesheet" media="screen" href="mise_en_page.css">
 </head>
 <body  background="images/oiseauFond.jpg"> 
 <h1> Playoffs NBA</h1>
 <form method="GET" action="recherche.php"> 
-     Rechercher un mot : <input type="text" name="query">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+</svg>     <input type="text" name="query">
      <input type="SUBMIT" value="Rechercher"> 
+     
      </form>
     <ul>
             <ul>
@@ -25,15 +28,28 @@
             
     </ul>
     <?php
-    function recherche_texte($chaine, $texte) {
-    $occurrences = array();
-    $index = 0;
-    while (($index = strpos($texte, $chaine, $index)) !== false) {
-        $occurrences[] = $index;
-        $index += strlen($chaine);
-    }
-    return $occurrences;
-}
+  // Connexion à la base de données
+  $host = "localhost";
+  $username = "root";
+  $password = "root";
+  $database = "nba_projet";
+
+  try {
+    $pdo = new PDO("mysql:host=$host;dbname=$database", $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  } catch(PDOException $e) {
+    echo "Connexion échouée : " . $e->getMessage();
+  }
+
+  // Requête SQL pour chercher les résultats correspondants
+  $sql = "SELECT * FROM equipe ORDER BY IdEquipe ASC ";
+
+  // Préparation de la requête SQL
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute(['query' => "$sql"]);
+
+  // Fermeture de la connexion à la base de données
+  $pdo = null;
 ?>
     <h1>Bracket </h1>
 <table border="0" cellpadding="0" cellspacing="0" style="font-size: 90%; margin:1em 2em 1em 1em;">
@@ -98,9 +114,9 @@
 </td>
 <td align="center" bgcolor="#00008b" style="border:1px solid #600;"><span style="color:#ffffff">1</span>
 </td>
-<td style="border:1px solid #600;" bgcolor="#87cefa">&#160;Miami heats
+<td style="border:1px solid #600;" bgcolor="#87cefa">&#160;<?php  $row = $stmt->fetch(); echo "<p>" . $row[1] . "</p>";?>
 </td>
-<td align="center" style="border:1px solid #600;" bgcolor="#87cefa">
+<td align="center" style="border:1px solid #600;" bgcolor="#87cefa"><?php  $row = $stmt->fetch(); echo "<p>" . $row[2] . "</p>";?>
 </td>
 <td align="center" style="border-width:0 0 2px 0; border-style:solid;border-color:black;">&#160;
 </td></tr>
@@ -109,7 +125,7 @@
 </td>
 <td rowspan="2" align="center" bgcolor="#00008b" style="border:1px solid #600;"><span style="color:#ffffff">8</span>
 </td>
-<td rowspan="2" style="border:1px solid #600;" bgcolor="#87cefa">&#160;
+<td rowspan="2" style="border:1px solid #600;" bgcolor="#87cefa">&#160; <?php  $row = $stmt->fetch(); echo "<p>" . $row[1] . "</p>";?>
 </td>
 <td rowspan="2" align="center" style="border:1px solid #600;" bgcolor="#87cefa">
 </td>
@@ -151,7 +167,7 @@
 </td>
 <td rowspan="2" align="center" bgcolor="#00008b" style="border:1px solid #600;"><span style="color:#ffffff">4</span>
 </td>
-<td rowspan="2" style="border:1px solid #600;" bgcolor="#87cefa">&#160;
+<td rowspan="2" style="border:1px solid #600;" bgcolor="#87cefa">&#160;<?php  $row = $stmt->fetch(); echo "<p>" . $row[1] . "</p>";?>
 </td>
 <td rowspan="2" align="center" style="border:1px solid #600;" bgcolor="#87cefa">
 </td></tr>
