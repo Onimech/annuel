@@ -11,13 +11,17 @@
     
     <ul>
     <li> <a href="index.php">Accueil</a> </li>
-            <li> <a href="presentation.php">C'est quoi les Playoff de la NBA?</a> </li>
-            <li> <a href="tableau.php">Tableau Séries</a> </li>
-            <li> <a href="carte.php">Carte Intéractive</a> </li>
-            <li> <a href="equipes.php">Liste Equipes</a> </li>
-            <li> <a href="joueurs.php">Liste Joueurs</a> </li>
-            <li> <a href="coachs.php">Liste Coachs</a> </li>
+            <li> <a class="barre"href="presentation.php">C'est quoi les Playoff de la NBA?</a> </li>
+            <li> <a class="barre"href="tableau.php">Tableau Séries</a> </li>
+            <li> <a class="barre"href="carte.php">Carte Intéractive</a> </li>
+            <li> <a class="barre"href="equipes.php">Liste Equipes</a> </li>
+            <li> <a class="barre"href="joueurs.php">Liste Joueurs</a> </li>
+            <li> <a class="barre"href="coachs.php">Liste Coachs</a> </li>
     </ul>
+    <form method="GET" action="recherche.php"> 
+     Rechercher un mot : <input type="text" name="query">
+     <input type="SUBMIT" value="Rechercher"> 
+     </form>
     <h1> <center>Liste des Joueurs</center></h1>
 
 
@@ -40,7 +44,7 @@
 //si erreur
 
     //Ecriture de la requête 
-    $requete="SELECT * FROM `joueur`;";
+    $requete="SELECT * FROM `joueur` where nom;";
 
     //Envoi de la requête
    
@@ -67,15 +71,17 @@
 foreach ($connexion->query($requete) as $colonne) {
         //Affichage des lignes de données, champ par champ
         echo "<tr>";
-        echo "<td><h3>".$colonne['nomJoueur']."</h3></td>";
-        echo "<td><h3>".$colonne['prenomJoueur']."</h3></td>";
-        echo "<td><h3>".$colonne['age']."</h3></td>";
-        echo "<td><h3>".$colonne['nMaillot']."</h3></td>";
-        echo "<td><h3>".$colonne['Poste']."</h3></td>";
-        echo "<td><h3>".$colonne['nTitres']."</h3></td>";
-        echo "<td><h3>".$colonne['PosDraft']."</h3></td>";
-        echo "<td><h3>".$colonne['AnDraft']."</h3></td>";
-        echo "<td><h3>".$colonne['nomEquipe']."</h3></td>";}
+        $nomJoueur = $colonne['nomJoueur'];
+        $prenomJoueur = $colonne['prenomJoueur'];
+        echo "<td><h3><center><a href='joueur.php?nomJoueur=$nomJoueur&prenomJoueur=$prenomJoueur'>".$colonne['nomJoueur']."</a></h3></td>";
+        echo "<td><h3><center><a href='joueur.php?nomJoueur=$nomJoueur&prenomJoueur=$prenomJoueur'>".$colonne['prenomJoueur']."</a></h3></td>";
+        echo "<td><h3><center>".$colonne['age']."</h3></td>";
+        echo "<td><h3><center>".$colonne['nMaillot']."</h3></td>";
+        echo "<td><h3><center>".$colonne['Poste']."</h3></td>";
+        echo "<td><h3><center>".$colonne['nTitres']."</h3></td>";
+        echo "<td><h3><center>".$colonne['PosDraft']."</h3></td>";
+        echo "<td><h3><center>".$colonne['AnDraft']."</h3></td>";
+        echo "<td><h3><center>".$colonne['nomEquipe']."</h3></td>";}
 //comment récuperer le nom de l'équpe et pas l'id ??
 
     

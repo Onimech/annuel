@@ -9,13 +9,17 @@
 <body> 
     <ul>
     <li> <a href="index.php">Accueil</a> </li>
-            <li> <a href="presentation.php">C'est quoi les Playoff de la NBA?</a> </li>
-            <li> <a href="tableau.php">Tableau Séries</a> </li>
-            <li> <a href="carte.php">Carte Intéractive</a> </li>
-            <li> <a href="equipes.php">Liste Equipes</a> </li>
-            <li> <a href="joueurs.php">Liste Joueurs</a> </li>
-            <li> <a href="coachs.php">Liste Coachs</a> </li>
+            <li> <a class="barre"href="presentation.php">C'est quoi les Playoff de la NBA?</a> </li>
+            <li> <a class="barre"href="tableau.php">Tableau Séries</a> </li>
+            <li> <a class="barre"href="carte.php">Carte Intéractive</a> </li>
+            <li> <a class="barre"href="equipes.php">Liste Equipes</a> </li>
+            <li> <a class="barre"href="joueurs.php">Liste Joueurs</a> </li>
+            <li> <a class="barre"href="coachs.php">Liste Coachs</a> </li>
     </ul>
+    <form method="GET" action="recherche.php"> 
+     Rechercher un mot : <input type="text" name="query">
+     <input type="SUBMIT" value="Rechercher"> 
+     </form>
     <h1> <center>Liste des Equipes</center></h1>
 
     <div class="listUser">
@@ -38,7 +42,7 @@ try {$connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       }
     
     //Ecriture de la requête 
-    $requete="SELECT * FROM `equipe`;";
+    $requete="SELECT * FROM `equipe` JOIN `coach` using(IdCoach)";
 
     //Envoi de la requête
    
@@ -61,7 +65,8 @@ try {$connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
    foreach ($connexion->query($requete) as $colonne) {
         //Affichage des lignes de données, champ par champ
         echo "<tr>";
-        echo "<td><h3><center>".$colonne['nomEquipe']."</h3></td>";
+        $nomEquipe = $colonne['nomEquipe'];
+        echo "<td><h3><center><a href='equipe.php?nomEquipe=$nomEquipe'>".$colonne['nomEquipe']."</h3></td>";
         echo "<td><h3><center>".$colonne['Conference']."</h3></td>";
         echo "<td><h3><center>".$colonne['Ville']."</h3></td>";
         echo "<td><h3><center>".$colonne['Classement']."</h3></td>";
@@ -69,7 +74,7 @@ try {$connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         echo "<td><h3><center>".$colonne['nVictoires']."</h3></td>";
         echo "<td><h3><center>".$colonne['nDefaites']."</h3></td>";
         echo "<td><h3><center>".$colonne['nTitresEquipe']."</h3></td>";
-        echo "<td><h3><center>".$colonne['IdCoach']."</h3></td>";
+        echo "<td><h3><center>".$colonne['prenomCoach']," ",$colonne['nomCoach']."</h3></td>";
         echo "<td><h3><center>".$colonne['Description']."</h3></td>";}
 //comment récuperer le nom de l'équpe et pas l'id ??
 

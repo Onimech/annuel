@@ -1,3 +1,8 @@
+.tournament{
+	background-color: rgb(255, 255, 255);
+	border-color: #111;
+	
+}
 h1{
 	text-align: center;
 	color: black;
@@ -35,6 +40,30 @@ h1{
 	padding-inline: 10px;
 	background-color: rgb(217, 217, 217);
 }
+#tree{
+    display: table;
+    width:60%;
+    vertical-align:middle;
+  }
+  .level{
+    display:table-cell;
+    width:33%;
+    vertical-align:middle;
+  }
+.item{
+background-color: blue;
+}
+.tabAffichage{
+align-content: center;
+	height: 100px; 
+	width: 125px;
+text-align: center;
+	text-decoration: underline;
+	margin-left: 700px;
+	margin-right: 50px;
+
+}
+
 
 td a {
   display: block;
@@ -46,6 +75,7 @@ body {
 	font: 75% georgia, sans-serif;
 	line-height: 1.88889;
 	color: #555753; 
+	
 	}
 
 p { 
@@ -86,26 +116,30 @@ li a {
 		background-color: #111;
 		}
 	
-a:link { 
+.barre:link { 
 	font-weight: bold; 
 	text-decoration: none; 
 	color: rgb(255, 255, 255);
 	}
 
-a:visited { 
+.barre:visited { 
 	font-weight: bold; 
 	text-decoration: none; 
 	color: rgb(192, 253, 194);
 	}
 
 
-a:hover, a:focus, a:active { 
+.barre:hover, .barre:focus, .barre:active { 
 	text-decoration: underline; 
 	color: rgb(128, 250, 103);
 	}
 
-		
-
+		.carte{
+			color : black;
+		}
+.carte:hover{
+	color :blue;
+}
 .nomOiseau
 {
 	text-align: center;

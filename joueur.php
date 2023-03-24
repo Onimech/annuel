@@ -11,19 +11,27 @@
     
     <ul>
     <li> <a href="index.php">Accueil</a> </li>
-            <li> <a href="presentation.php">C'est quoi les Playoff de la NBA?</a> </li>
-            <li> <a href="tableau.php">Tableau Séries</a> </li>
-            <li> <a href="carte.php">Carte Intéractive</a> </li>
-            <li> <a href="equipes.php">Liste Equipes</a> </li>
-            <li> <a href="joueurs.php">Liste Joueurs</a> </li>
-            <li> <a href="coachs.php">Liste Coachs</a> </li>
+            <li> <a class="barre"href="presentation.php">C'est quoi les Playoff de la NBA?</a> </li>
+            <li> <a class="barre"href="tableau.php">Tableau Séries</a> </li>
+            <li> <a class="barre"href="carte.php">Carte Intéractive</a> </li>
+            <li> <a class="barre"href="equipes.php">Liste Equipes</a> </li>
+            <li> <a class="barre"href="joueurs.php">Liste Joueurs</a> </li>
+            <li> <a class="barre"href="coachs.php">Liste Coachs</a> </li>
     </ul>
+    <form method="GET" action="recherche.php"> 
+     Rechercher un mot : <input type="text" name="query">
+     <input type="SUBMIT" value="Rechercher"> 
+     </form>
     <h1> <center>Fiche d'un joueur : </center></h1>
 
   
         
     <?php
   /* cette page affichera les informations d'un joueur en particulier en fonction du lien cliqué*/
+  $nomJoueur = $_GET['nomJoueur'];
+echo $nomJoueur;
+$prenomJoueur = $_GET['prenomJoueur'];
+echo $prenomJoueur;
     //Connexion
     $user = 'root';
     $password = 'root';
@@ -40,7 +48,7 @@
 //si erreur
 
     //Ecriture de la requête 
-    $requete="SELECT * FROM `joueur`;";
+    $requete="SELECT * FROM `joueur` where nomJoueur like '$nomJoueur' and prenomJoueur like '$prenomJoueur';";
 
     //Envoi de la requête
    

@@ -16,12 +16,19 @@
             <li> <a href="joueurs.php">Liste Joueurs</a> </li>
             <li> <a href="coachs.php">Liste Coachs</a> </li>
     </ul>
+    <form method="GET" action="recherche.php"> 
+     Rechercher un mot : <input type="text" name="query">
+     <input type="SUBMIT" value="Rechercher"> 
+     </form>
     <h1> <center>Liste des Coach</center></h1>
 
  
         
     <?php
-
+ $nomCoach = $_GET['nomCoach'];
+ echo $nomCoach;
+ $prenomCoach = $_GET['prenomCoach'];
+ echo $prenomCoach;
     //Connexion
     $user = 'root';
     $password = 'root';
@@ -37,7 +44,7 @@
       }
     
     //Ecriture de la requête 
-    $requete="SELECT * FROM `coach` JOIN `equipe` USING(IdCoach);";
+    $requete="SELECT * FROM `coach` JOIN `equipe` USING(IdCoach) where nomCoach like '$nomCoach' and prenomCoach like '$prenomCoach';";
 
     //Envoi de la requête
  ?>
@@ -50,6 +57,8 @@
 <td class="tabAffichage"><h2>Nom</h2></td>
 <td class="tabAffichage"><h2>Portrait</h2></td>
 <td class="tabAffichage"><h2>Profil</h2></td>
+<td class="tabAffichage"><h2>Equipe Coachée</h2></td>
+
 </tr>
 <?php
       foreach ($connexion->query($requete) as $colonne) {

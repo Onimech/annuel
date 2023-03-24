@@ -16,6 +16,10 @@
             <li> <a href="joueurs.php">Liste Joueurs</a> </li>
             <li> <a href="coachs.php">Liste Coachs</a> </li>
     </ul>
+    <form method="GET" action="recherche.php"> 
+     Rechercher un mot : <input type="text" name="query">
+     <input type="SUBMIT" value="Rechercher"> 
+     </form>
     <h1> <center>Série :</center></h1>
 
     <div class="listUser">
