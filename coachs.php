@@ -37,7 +37,7 @@
       }
     
     //Ecriture de la requête 
-    $requete="SELECT * FROM `coach` JOIN `equipe` USING(IdCoach);";
+    $requete="SELECT * FROM `coach`;";
 
     //Envoi de la requête
  ?>
@@ -50,7 +50,6 @@
 <td class="tabAffichage"><h2>Nom</h2></td>
 <td class="tabAffichage"><h2>Portrait</h2></td>
 <td class="tabAffichage"><h2>Profil</h2></td>
-<td class="tabAffichage"><h2>Equipe Coaché</h2></td>
 </tr>
 <?php
       foreach ($connexion->query($requete) as $colonne) {
@@ -63,8 +62,8 @@
         echo '<td><h3><center>'.$colonne['nomCoach'].'</h3></td>';
 
         echo '<td><h3><center><img src="data:image/jpeg;base64,' . base64_encode($colonne['PortraitCoach']) . '" height="75px" width="75px" alt="photo" title="logo"/></h3></td>';
-        echo '<td><h3><center>'.$colonne['Profil'].'</h3></td>';
-        echo '<td><h3><center>'.$colonne['nomEquipe'].'</h3></td>';}
+        echo '<td><h3><center>'.$colonne['Profil'].'</h3></td>';}
+
         
 
 //comment récuperer le nom de l'équpe et pas l'id ??

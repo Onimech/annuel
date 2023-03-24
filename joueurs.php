@@ -67,15 +67,15 @@
 foreach ($connexion->query($requete) as $colonne) {
         //Affichage des lignes de données, champ par champ
         echo "<tr>";
-        echo "<td><h3><center>".$colonne['nomJoueur']."</h3></td>";
-        echo "<td><h3><center>".$colonne['prenomJoueur']."</h3></td>";
-        echo "<td><h3><center>".$colonne['age']."</h3></td>";
-        echo "<td><h3><center>".$colonne['nMaillot']."</h3></td>";
-        echo "<td><h3><center>".$colonne['Poste']."</h3></td>";
-        echo "<td><h3><center>".$colonne['nTitres']."</h3></td>";
-        echo "<td><h3><center>".$colonne['PosDraft']."</h3></td>";
-        echo "<td><h3><center>".$colonne['AnDraft']."</h3></td>";
-        echo "<td><h3><center>".$colonne['nomEquipe']."</h3></td>";}
+        echo "<td><h3>".$colonne['nomJoueur']."</h3></td>";
+        echo "<td><h3>".$colonne['prenomJoueur']."</h3></td>";
+        echo "<td><h3>".$colonne['age']."</h3></td>";
+        echo "<td><h3>".$colonne['nMaillot']."</h3></td>";
+        echo "<td><h3>".$colonne['Poste']."</h3></td>";
+        echo "<td><h3>".$colonne['nTitres']."</h3></td>";
+        echo "<td><h3>".$colonne['PosDraft']."</h3></td>";
+        echo "<td><h3>".$colonne['AnDraft']."</h3></td>";
+        echo "<td><h3>".$colonne['nomEquipe']."</h3></td>";}
 //comment récuperer le nom de l'équpe et pas l'id ??
 
     

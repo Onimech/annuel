@@ -17,7 +17,31 @@
     </ul>
     
 
-    <h1> C'est quoi les Playoff de la NBA ? </h1>
-<h2>Les playoffs NBA (appelés séries éliminatoires au Canada) sont les séries éliminatoires de la National Basketball Association (NBA). Ils sont organisés en quatre tours et regroupent seize équipes, huit de chaque conférence (dans ce format depuis 1984). Les gagnants du premier tour (first round en anglais) accèdent aux demi-finales de conférence (Conference Semifinals en anglais), et les gagnants des demi-finales de conférence parviennent en finales de conférence (Conference Finals en anglais). Ensuite, les champions de chaque conférence se rencontrent lors des finales NBA (NBA Finals en anglais). Chaque série se joue au meilleur des sept matchsN 1, c'est-à-dire que la première équipe qui gagne 4 matchs remporte la série. </h2>
+    <h1> Les grands ordres d'oiseaux </h1>
+        <h2> On recense 22 grands ordres d'oiseaux </h2>
+            <ol>
+                <li> <b> Ordre des struthioniformes</b> : <i> autruche, nandous, kiwis </i> </li><br>
+                <li> <b> Ordre des tinamiformes</b> <i> : tinamous </i></li><br>
+                <li> <b> Ordre des ansériformes</b> : <i> canards, oie</i></li><br>
+                <li> <b> Ordre des galliformes</b>: <i> poules, perdrix, faisans </i></li><br>
+                <li> <b> Ordre des podicipédiformes </b>: <i>grèbes </i> </li><br>
+                <li> <b>Ordre des gaviiformes</b> : <i>plongeons </i> </li><br>
+                <li> <b>Ordre des sphénisciformes</b> : <i>manchots </i> </li><br>
+                <li> <b>Ordre des pélécaniformes</b> : <i>pélicans, fous </i> </li><br>
+                <li> <b>Ordre des gruiformes</b> : <i>grues, râles, foulques </i> </li><br>
+                <li> <b>Ordre des ciconiiformes</b> : <i>cigognes, hérons </i> </li><br>
+                <li> <b>Ordre des charadriiformes</b> : <i>mouettes, pingouins, bécasses </i> </li><br>
+                <li> <b>Ordre des columbiformes</b> : <i>colombes, pigeons </i> </li><br>
+                <li> <b>Ordre des falconiformes</b> : <i>faucons, aigles, vautours </i> </li><br>
+                <li> <b>Ordre des strigiformes</b> : <i>chouettes et hiboux </i> </li><br>
+                <li> <b>Ordre des psittaciformes</b> : <i>perruches et perroquets </i> </li><br>
+                <li> <b>Ordre des cuculiformes</b> : <i>coucous </i> </li><br>
+                <li> <b>Ordre des caprimulgiformes</b> : <i>engoulevents </i> </li><br>
+                <li> <b>Ordre des apodiformes</b> : <i>martinets </i> </li><br>
+                <li> <b>Ordre des coliiformes</b> : <i>colious </i> </li><br>
+                <li> <b>Ordre des coraciiformes</b> : <i>martins-pêcheurs, calaos </i> </li><br>
+                <li> <b>Ordre des piciformes</b> : <i>pics, toucans </i> </li><br>
+                <li> <b>Ordre des passériformes</b> : <i>les passereaux </i> </li><br>
+            </ol>
     </body>
 </html>

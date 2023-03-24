@@ -38,7 +38,7 @@ try {$connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       }
     
     //Ecriture de la requête 
-    $requete="SELECT * FROM `equipe` JOIN `coach` using(IdCoach)";
+    $requete="SELECT * FROM `equipe`;";
 
     //Envoi de la requête
    
@@ -69,7 +69,7 @@ try {$connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         echo "<td><h3><center>".$colonne['nVictoires']."</h3></td>";
         echo "<td><h3><center>".$colonne['nDefaites']."</h3></td>";
         echo "<td><h3><center>".$colonne['nTitresEquipe']."</h3></td>";
-        echo "<td><h3><center>".$colonne['prenomCoach']," ",$colonne['nomCoach']."</h3></td>";
+        echo "<td><h3><center>".$colonne['IdCoach']."</h3></td>";
         echo "<td><h3><center>".$colonne['Description']."</h3></td>";}
 //comment récuperer le nom de l'équpe et pas l'id ??
 
