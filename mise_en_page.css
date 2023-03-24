@@ -140,6 +140,9 @@ li a {
 .carte:hover{
 	color :blue;
 }
+.tableau_serie:hover{
+	color : red;
+}
 .nomOiseau
 {
 	text-align: center;

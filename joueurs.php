@@ -44,7 +44,7 @@
 //si erreur
 
     //Ecriture de la requête 
-    $requete="SELECT * FROM `joueur` where nom;";
+    $requete="SELECT * FROM `joueur`;";
 
     //Envoi de la requête
    

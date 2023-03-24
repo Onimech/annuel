@@ -10,7 +10,7 @@
 <body> 
     
     <ul>
-    <li> <a href="index.php">Accueil</a> </li>
+            <li> <a class="barre"href="index.php">Accueil</a> </li>
             <li> <a class="barre"href="presentation.php">C'est quoi les Playoff de la NBA?</a> </li>
             <li> <a class="barre"href="tableau.php">Tableau Séries</a> </li>
             <li> <a class="barre"href="carte.php">Carte Intéractive</a> </li>
@@ -83,7 +83,8 @@ foreach ($connexion->query($requete) as $colonne) {
         echo "<td><h3><center>".$colonne['nTitres']."</h3></td>";
         echo "<td><h3><center>".$colonne['PosDraft']."</h3></td>";
         echo "<td><h3><center>".$colonne['AnDraft']."</h3></td>";
-        echo "<td><h3><center>".$colonne['nomEquipe']."</h3></td>";}
+        $nomEquipe = $colonne['nomEquipe'];
+        echo "<td><h3><center><a href='equipe.php?nomEquipe=$nomEquipe'>".$colonne['nomEquipe']."</a></h3></td>";}
 //comment récuperer le nom de l'équpe et pas l'id ??
 
     

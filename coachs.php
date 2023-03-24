@@ -54,7 +54,7 @@
 <td class="tabAffichage"><h2>Nom</h2></td>
 <td class="tabAffichage"><h2>Portrait</h2></td>
 <td class="tabAffichage"><h2>Profil</h2></td>
-<td class="tabAffichage"><h2>Equipe Coaché</h2></td>
+<td class="tabAffichage"><h2>Equipe Coachée</h2></td>
 </tr>
 <?php
       foreach ($connexion->query($requete) as $colonne) {
