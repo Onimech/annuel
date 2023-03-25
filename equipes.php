@@ -1,3 +1,10 @@
+<?php
+include("ConnexionBDD.php");
+session_start();
+
+
+
+?>
 <!DOCTYPE HTML>
 
 <html>
@@ -15,6 +22,7 @@
             <li> <a class="barre"href="equipes.php">Liste Equipes</a> </li>
             <li> <a class="barre"href="joueurs.php">Liste Joueurs</a> </li>
             <li> <a class="barre"href="coachs.php">Liste Coachs</a> </li>
+            <li> <a class="barre" href="connexion.php">Se connecter</a> </li>
     </ul>
     <form method="GET" action="recherche.php"> 
      Rechercher un mot : <input type="text" name="query">
@@ -26,21 +34,6 @@
         
     <?php
 
-    //Connexion
-    $user = 'root';
-    $password = 'root';
-    $db = 'nba_projet';
-    $host = 'localhost';
- 
-    $connexion = new PDO ("mysql:host=$host;dbname=$db", $user, $password);
-
-   
-try {$connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo 'Connexion réussie';}
-    catch(PDOException $e){
-        echo "Erreur : " . $e->getMessage();
-      }
-    
     //Ecriture de la requête 
     $requete="SELECT * FROM `equipe` JOIN `coach` using(IdCoach)";
 

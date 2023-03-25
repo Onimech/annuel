@@ -1,3 +1,10 @@
+<?php
+include("ConnexionBDD.php");
+session_start();
+
+
+
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -17,6 +24,7 @@
             <li> <a class="barre"href="joueurs.php">Liste Joueurs</a> </li>
             <li> <a class="barre"href="coachs.php">Liste Coachs</a> </li>
             <li> <a class="barre"href="connexion.php">Se connecter</a> </li>
+            <li> <a class="barre" href="connexion.php">Se connecter</a> </li>
             </ul>
             
     </ul>
@@ -25,18 +33,6 @@
      <input type="SUBMIT" value="Rechercher"> 
      </form>
     <?php
-  // Connexion à la base de données
-  $host = "localhost";
-  $username = "root";
-  $password = "root";
-  $database = "nba_projet";
-
-  try {
-    $pdo = new PDO("mysql:host=$host;dbname=$database", $username, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  } catch(PDOException $e) {
-    echo "Connexion échouée : " . $e->getMessage();
-  }
 
   // Récupération de la requête de recherche
   $query = $_GET['query'];
@@ -45,7 +41,7 @@
   $sql = "SELECT * FROM equipe WHERE nomEquipe LIKE '%$query%'";
 
   // Préparation de la requête SQL
-  $stmt = $pdo->prepare($sql);
+  $stmt = $connexion->prepare($sql);
   $stmt->execute(['query' => "%$query%"]);
 
   // Affichage des résultats de la recherche

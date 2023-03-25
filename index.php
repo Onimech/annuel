@@ -1,3 +1,10 @@
+<?php
+include("ConnexionBDD.php");
+session_start();
+
+
+
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -15,6 +22,7 @@
             <li> <a class="barre"href="equipes.php">Liste Equipes</a> </li>
             <li> <a class="barre"href="joueurs.php">Liste Joueurs</a> </li>
             <li> <a class="barre"href="coachs.php">Liste Coachs</a> </li>
+            <li> <a class="barre" href="connexion.php">Se connecter</a> </li>
             </ul>
     </ul>
     <form method="GET" action="recherche.php"> 

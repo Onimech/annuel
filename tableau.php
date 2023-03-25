@@ -1,3 +1,10 @@
+<?php
+include("ConnexionBDD.php");
+session_start();
+
+
+
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -24,32 +31,21 @@
             <li> <a class="barre" href="joueurs.php">Liste Joueurs</a> </li>
             <li> <a class="barre" href="coachs.php">Liste Coachs</a> </li>
             <li> <a class="barre" href="connexion.php">Se connecter</a> </li>
+            <li> <a class="barre" href="connexion.php">Se connecter</a> </li>
             </ul>
             
     </ul>
     <?php
-  // Connexion à la base de données
-  $host = "localhost";
-  $username = "root";
-  $password = "root";
-  $database = "nba_projet";
-
-  try {
-    $pdo = new PDO("mysql:host=$host;dbname=$database", $username, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  } catch(PDOException $e) {
-    echo "Connexion échouée : " . $e->getMessage();
-  }
-
+ 
   // Requête SQL pour chercher les résultats correspondants
   $sql = "SELECT * FROM equipe ";
 
   // Préparation de la requête SQL
-  $stmt = $pdo->prepare($sql);
+  $stmt = $connexion->prepare($sql);
   $stmt->execute(['query' => "$sql"]);
 
   // Fermeture de la connexion à la base de données
-  $pdo = null;
+  $connexion = null;
 ?>
     <h1>Bracket </h1>
 <table border="0" cellpadding="0" cellspacing="0" style="font-size: 90%; margin:1em 2em 1em 1em;">
