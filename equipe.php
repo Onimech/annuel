@@ -114,24 +114,21 @@ echo $equipe ;
     
         
         echo "</table>";
+    if (isset($_SESSION['mail'])){
+            ?><form method="POST">
+            <label for="commentaire">Commentaire :</label>
+            <textarea name="comment_post" rows="5" required></textarea><br>
+            <input type="submit" value="Ajouter un commentaire">
+            </form><?php
     
-        if (!isset($_SESSION['mail'])) {
-            header('Location: connexion.php'); // Rediriger vers la page de connexion
-            exit();
-        }
-        
+            }
+            else {
+    
+                ?> <a href="connexion.php">Connectez vous pour commenter</a> <?php
+    
+            }
 
-      
         
-        ?>
-       <form method="POST">
-        <label for="commentaire">Commentaire :</label>
-        <textarea name="comment_post" rows="5" required></textarea><br>
-
-  <input type="submit" value="Ajouter un commentaire">
-</form>
-        
-        <?php
         
         
       

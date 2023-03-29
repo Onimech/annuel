@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	} else {
 
 	// Prépare la requête SQL pour insérer les données dans la table "utilisateur"
-	$stmt = $bdd->prepare("INSERT INTO utilisateur (mail, mdp, Telephone,admin ) VALUES (:email, :mdp, :telephone, 0)");
+	$stmt = $connexion->prepare("INSERT INTO utilisateur (mail, mdp, Telephone,admin ) VALUES (:email, :mdp, :telephone, 0)");
 
 	// Lie les paramètres à la requête SQL
 	

@@ -159,9 +159,9 @@ include("barre_menu.php");
 </td>
 <td rowspan="2" align="center" bgcolor="#00008b" style="border:1px solid #600;"><span style="color:#ffffff">4</span>
 </td>
-<td rowspan="2" style="border:1px solid #600;" bgcolor="#87cefa">&#160;<?php  $row = $stmt->fetch(); echo "<p>" . $row[1] . "</p>";?>
+<td rowspan="2" style="border:1px solid #600;" bgcolor="#87cefa">&#160;<?php  $row = $stmt->fetch(); echo "<p>" . $row['nomEquipe'] . "</p>";?>
 </td>
-<td rowspan="2" align="center" style="border:1px solid #600;" bgcolor="#87cefa">
+<td rowspan="2" align="center" style="border:1px solid #600;" bgcolor="#87cefa"><?php echo "<p>" . $row['ABRequipe'] . "</p>";?>
 </td></tr>
 <tr>
 <td height="7">

@@ -29,7 +29,7 @@ include("barre_menu.php");
   $query = $_GET['query'];
 
   // Requête SQL pour chercher les résultats correspondants
-  $sql = "SELECT * FROM equipe WHERE nomEquipe LIKE '%$query%'";
+  $sql = "SELECT * FROM equipe WHERE nomEquipe LIKE ? ";
 
   // Préparation de la requête SQL
   $stmt = $connexion->prepare($sql);
