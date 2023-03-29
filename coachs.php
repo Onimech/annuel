@@ -11,19 +11,12 @@ session_start();
 <head>
 <meta charset="UTF8" />
 <title> Coach </title>
-<link rel="stylesheet" media="screen" href="mise_en_page.css">
+<link rel="stylesheet" media="screen" href="coachs.css">
 </head>
 <body> 
-    <ul>
-    <li> <a href="index.php">Accueil</a> </li>
-            <li> <a class="barre"href="presentation.php">C'est quoi les Playoff de la NBA?</a> </li>
-            <li> <a class="barre"href="tableau.php">Tableau Séries</a> </li>
-            <li> <a class="barre"href="carte.php">Carte Intéractive</a> </li>
-            <li> <a class="barre"href="equipes.php">Liste Equipes</a> </li>
-            <li> <a class="barre"href="joueurs.php">Liste Joueurs</a> </li>
-            <li> <a class="barre"href="coachs.php">Liste Coachs</a> </li>
-            <li> <a class="barre" href="connexion.php">Se connecter</a> </li>
-    </ul>
+<?php
+include("barre_menu.php");
+?>
     <form method="GET" action="recherche.php"> 
      Rechercher un mot : <input type="text" name="query">
      <input type="SUBMIT" value="Rechercher"> 
@@ -34,7 +27,8 @@ session_start();
         
     <?php
 
-
+   
+    
     //Ecriture de la requête 
     $requete="SELECT * FROM `coach` JOIN `equipe` USING(IdCoach);";
 
@@ -58,8 +52,9 @@ session_start();
         echo "<tr>";
         $nomCoach= $colonne['nomCoach'];
         $prenomCoach = $colonne['prenomCoach'];
-        echo "<td><h3><center><a href='coach.php?nomCoach=$nomCoach&prenomCoach=$prenomCoach'>".$colonne['prenomCoach']."</a></h3></td>";
-        echo "<td><h3><center><a href='coach.php?nomCoach=$nomCoach&prenomCoach=$prenomCoach'>".$colonne['nomCoach']."</a></h3></td>";
+        $IdCoach = $colonne['IdCoach'];
+        echo "<td><h3><center><a href='coach.php?nomCoach=$nomCoach&prenomCoach=$prenomCoach&IdCoach=$IdCoach'>".$colonne['prenomCoach']."</a></h3></td>";
+        echo "<td><h3><center><a href='coach.php?nomCoach=$nomCoach&prenomCoach=$prenomCoach&IdCoach=$IdCoach'>".$colonne['nomCoach']."</a></h3></td>";
 
         echo '<td><h3><center><img src="data:image/jpeg;base64,' . base64_encode($colonne['PortraitCoach']) . '" height="75px" width="75px" alt="photo" title="logo"/></h3></td>';
         echo '<td><h3><center>'.$colonne['Profil'].'</h3></td>';

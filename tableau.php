@@ -1,51 +1,45 @@
 <?php
 include("ConnexionBDD.php");
 session_start();
-
-
-
 ?>
+
 <!DOCTYPE HTML>
 <html>
 <head>
 <meta charset="UTF8" />
 <title> Tournoi </title>
-<link rel="stylesheet" media="screen" href="mise_en_page.css">
+<link rel="stylesheet" media="screen" href="tableau.css">
+
 </head>
-<body  background="images/oiseauFond.jpg"> 
-<h1> Playoffs NBA</h1>
-<form method="GET" action="recherche.php"> 
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-</svg>     <input type="text" name="query">
-     <input type="SUBMIT" value="Rechercher"> 
-     
-     </form>
-    <ul>
-            <ul>
-            <li> <a class="barre" href="index.php">Accueil</a> </li>
-            <li> <a class="barre" href="presentation.php">C'est quoi les Playoff de la NBA?</a> </li>
-            <li> <a class="barre" href="tableau2.php">Tableau Séries</a> </li>
-            <li> <a class="barre" href="carte.php">Carte Intéractive</a> </li>
-            <li> <a class="barre" href="equipes.php">Liste Equipes</a> </li>
-            <li> <a class="barre" href="joueurs.php">Liste Joueurs</a> </li>
-            <li> <a class="barre" href="coachs.php">Liste Coachs</a> </li>
-            <li> <a class="barre" href="connexion.php">Se connecter</a> </li>
-            <li> <a class="barre" href="connexion.php">Se connecter</a> </li>
-            </ul>
-            
-    </ul>
+<body> 
+
+
+    <div class="nav-container">
     <?php
- 
+include("barre_menu.php");
+?>
+    </div>
+  
+    <div class="search-container">
+        <form>
+            <input type="text" placeholder="Recherche...">
+            <input type="submit" value="Rechercher">
+        </form>
+    </div>
+
+<?php
+
+
+
   // Requête SQL pour chercher les résultats correspondants
   $sql = "SELECT * FROM equipe ";
 
   // Préparation de la requête SQL
   $stmt = $connexion->prepare($sql);
-  $stmt->execute(['query' => "$sql"]);
+  $stmt->execute();
 
   // Fermeture de la connexion à la base de données
-  $connexion = null;
+  $pdo = null;
 ?>
     <h1>Bracket </h1>
 <table border="0" cellpadding="0" cellspacing="0" style="font-size: 90%; margin:1em 2em 1em 1em;">

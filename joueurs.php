@@ -11,21 +11,14 @@ session_start();
 <head>
 <meta charset="UTF8" />
 <title> Liste des joueurs </title>
-<link rel="stylesheet" href="mise_en_page.css">
+<link rel="stylesheet" href="joueurs.css">
 </style>
 </head>
 <body> 
     
-    <ul>
-    <li> <a href="index.php">Accueil</a> </li>
-            <li> <a class="barre"href="presentation.php">C'est quoi les Playoff de la NBA?</a> </li>
-            <li> <a class="barre"href="tableau.php">Tableau Séries</a> </li>
-            <li> <a class="barre"href="carte.php">Carte Intéractive</a> </li>
-            <li> <a class="barre"href="equipes.php">Liste Equipes</a> </li>
-            <li> <a class="barre"href="joueurs.php">Liste Joueurs</a> </li>
-            <li> <a class="barre"href="coachs.php">Liste Coachs</a> </li>
-            <li> <a class="barre" href="connexion.php">Se connecter</a> </li>
-    </ul>
+<?php
+include("barre_menu.php");
+?>
     <form method="GET" action="recherche.php"> 
      Rechercher un mot : <input type="text" name="query">
      <input type="SUBMIT" value="Rechercher"> 
@@ -36,6 +29,7 @@ session_start();
         
     <?php
 
+   
     
 
 
@@ -69,8 +63,9 @@ foreach ($connexion->query($requete) as $colonne) {
         echo "<tr>";
         $nomJoueur = $colonne['nomJoueur'];
         $prenomJoueur = $colonne['prenomJoueur'];
-        echo "<td><h3><center><a href='joueur.php?nomJoueur=$nomJoueur&prenomJoueur=$prenomJoueur'>".$colonne['nomJoueur']."</a></h3></td>";
-        echo "<td><h3><center><a href='joueur.php?nomJoueur=$nomJoueur&prenomJoueur=$prenomJoueur'>".$colonne['prenomJoueur']."</a></h3></td>";
+        $idJoueur = $colonne['idJoueur'];
+        echo "<td><h3><center><a href='joueur.php?nomJoueur=$nomJoueur&prenomJoueur=$prenomJoueur&idJoueur=$idJoueur'>".$colonne['nomJoueur']."</a></h3></td>";
+        echo "<td><h3><center><a href='joueur.php?nomJoueur=$nomJoueur&prenomJoueur=$prenomJoueur&idJoueur=$idJoueur'>".$colonne['prenomJoueur']."</a></h3></td>";
         echo "<td><h3><center>".$colonne['age']."</h3></td>";
         echo "<td><h3><center>".$colonne['nMaillot']."</h3></td>";
         echo "<td><h3><center>".$colonne['Poste']."</h3></td>";

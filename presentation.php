@@ -4,25 +4,18 @@ session_start();
 
 
 
-?>
+?><link rel="stylesheet" type="text/css" href="presentation.css"> 
 <!DOCTYPE HTML>
 <html>
 <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" media="screen" href="mise_en_page.css">
+    
     <title> Présentation </title>
 </head>
-<body  background="images/oiseauFond.jpg">
-    <ul>
-            <li> <a class="barre"href="index.php">Accueil</a> </li>
-            <li> <a class="barre"href="presentation.php">C'est quoi les Playoff de la NBA?</a> </li>
-            <li> <a class="barre"href="tableau.php">Tableau Séries</a> </li>
-            <li> <a class="barre"href="carte.php">Carte Intéractive</a> </li>
-            <li> <a class="barre"href="equipes.php">Liste Equipes</a> </li>
-            <li> <a class="barre"href="joueurs.php">Liste Joueurs</a> </li>
-            <li> <a class="barre"href="coachs.php">Liste Coachs</a> </li>
-            <li> <a class="barre" href="connexion.php">Se connecter</a> </li>
-    </ul>
+<body>
+<?php
+include("barre_menu.php");
+?>
     <form method="GET" action="recherche.php"> 
      Rechercher un mot : <input type="text" name="query">
      <input type="SUBMIT" value="Rechercher"> 

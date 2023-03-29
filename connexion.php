@@ -4,15 +4,11 @@ session_start();
 ?><link rel="stylesheet" type="text/css" href="connexion.css"> 
 
 <h1> Login </h1><?php
-if (isset($_POST['deconnect'])) {
-	/*si le formulaire déconnexion est rempli alors on arrête la session test */
-	$_SESSION = array();
-	session_destroy();
-}
+
 if (isset($_POST['connexionNBA'])) {
   $mailconnect = htmlspecialchars($_POST['mail']);/*sécurisation des variables*/
 	$mdpconnect = htmlspecialchars($_POST['mdp']);/*sécurisation des variables*/
-	$requser = $bdd->prepare("SELECT * FROM utilisateur WHERE mail = :mail AND mdp = :mdp");
+	$requser = $connexion->prepare("SELECT * FROM utilisateur WHERE mail = :mail AND mdp = :mdp");
 	/*on recupere les valeurs present dans la table utilisateur pour le pseudo et le mdp saisie*/
 	try {
 		$requser->execute(array(':mail' => $mailconnect, ':mdp' => $mdpconnect));
@@ -23,9 +19,10 @@ if (isset($_POST['connexionNBA'])) {
 	/*compte le nombre de ligne de la requête, vérifié qu'il y a qu'une seule ligne qui correspond à ces pseudo et mdp*/
 	if ($userexist == 1) { /*si un utilisateur a été retrouvé grâce aux identifiants saisis*/
 		$userinfo = $requser->fetch(); /*récupère les données pour après les mettre dans des variables de sessions*/
-		$_SESSION['email'] = $userinfo['email'];
+		$_SESSION['mail'] = $userinfo['mail'];
 		$_SESSION['mdp'] = $userinfo['mdp'];
 		$_SESSION['admin'] = $userinfo['admin'];
+	
 		header("Location: index.php");/*on va sur la page import.php quand la connection est faite*/
 	} else {/*sinon aucun utilisateur correspond aux valeurs saisies*/
 		$erreur = "Mauvais pseudo ou mot de passe !";

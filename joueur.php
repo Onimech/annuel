@@ -11,21 +11,14 @@ session_start();
 <head>
 <meta charset="UTF8" />
 <title> Fiche Joueur </title>
-<link rel="stylesheet" href="mise_en_page.css">
+<link rel="stylesheet" href="joueurs.css">
 </style>
 </head>
 <body> 
     
-    <ul>
-            <li> <a class="barre"href="index.php">Accueil</a> </li>
-            <li> <a class="barre"href="presentation.php">C'est quoi les Playoff de la NBA?</a> </li>
-            <li> <a class="barre"href="tableau.php">Tableau Séries</a> </li>
-            <li> <a class="barre"href="carte.php">Carte Intéractive</a> </li>
-            <li> <a class="barre"href="equipes.php">Liste Equipes</a> </li>
-            <li> <a class="barre"href="joueurs.php">Liste Joueurs</a> </li>
-            <li> <a class="barre"href="coachs.php">Liste Coachs</a> </li>
-            <li> <a class="barre" href="connexion.php">Se connecter</a> </li>
-    </ul>
+<?php
+include("barre_menu.php");
+?>
     <form method="GET" action="recherche.php"> 
      Rechercher un mot : <input type="text" name="query">
      <input type="SUBMIT" value="Rechercher"> 
@@ -40,6 +33,8 @@ session_start();
 echo $nomJoueur;
 $prenomJoueur = $_GET['prenomJoueur'];
 echo $prenomJoueur;
+$idJoueur = $_GET['idJoueur'];
+
 
 
     //Ecriture de la requête 
@@ -84,6 +79,56 @@ foreach ($connexion->query($requete) as $colonne) {
 
     
     echo "</table>";
+    if (!isset($_SESSION['mail'])) {
+      header('Location: connexion.php'); // Rediriger vers la page de connexion
+      exit();
+  }
+  
+
+
+  
+  ?>
+ <form method="POST">
+  <label for="commentaire">Commentaire :</label>
+  <textarea name="comment_post" rows="5" required></textarea><br>
+
+<input type="submit" value="Ajouter un commentaire">
+</form>
+  
+  <?php
+  
+  
+
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+   // if (isset($_POST['submit'])) {
+      // Récupérer les données soumises
+      $member_id = $_SESSION['mail'];
+      $date_posted = date('Y-m-d H:i:s');
+      $comment_post = $_POST['comment_post'];
+      $requete_ins= $connexion->prepare("INSERT INTO `comment` (`member_id`, `date_posted`, `comment_post`, `idC`, `idE`,`idJ`) VALUES ( ?, ?, ?, ?, ?, ?)");
+      $requete_ins->execute([$member_id, $date_posted, $comment_post,NULL,NULL,$idJoueur]);
+                  
+      if ($requete_ins->rowCount ()>0){
+          echo"ajout avec succes";
+    }else{
+          echo"erreur dans ajout";
+    }
+  }       
+    //affichage des commentaires
+    
+    $requete_commentaire = "SELECT * FROM comment where idJ like $idJoueur ORDER BY date_posted DESC";
+                
+ 
+
+  foreach ($connexion->query($requete_commentaire) as $row) {
+
+      echo "<div class='comment'>";
+      echo "<p><strong>" . $row['member_id'] . "</strong> le " . $row['date_posted'] . "</p>";
+      echo "<p>" . $row['comment_post'] . "</p>";
+      echo "</div>";
+
+  }
+ 
 
   
     $connexion = null;

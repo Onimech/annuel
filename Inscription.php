@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$motdepasse = $_POST["motdepasse"];
 	$Telephone= $_POST["Telephone"];
 
-	$stmt = $bdd->prepare("SELECT COUNT(*) FROM utilisateur WHERE mail = ?");
+	$stmt = $connexion->prepare("SELECT COUNT(*) FROM utilisateur WHERE mail = ?");
 	$stmt->execute([$email]);
 	$count = $stmt->fetchColumn();
 
