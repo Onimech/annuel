@@ -2,9 +2,9 @@
 //These are the defined authentication environment in the db service
 
 
-$username = "nchemin";
-$password = "!22009188!";
-$dbname = 'nchemin';
+$username = "root";
+$password = "root";
+$dbname = 'nba_projet';
 $servername = 'localhost';
 
 

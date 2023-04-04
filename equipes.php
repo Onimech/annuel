@@ -32,7 +32,7 @@ include("barre_menu.php");
  
     
     //Ecriture de la requête 
-    $requete="SELECT * FROM `equipe` JOIN `coach` using(IdCoach)";
+    $requete="SELECT * FROM `equipe` JOIN `coach` using(idCoach)";
 
     //Envoi de la requête
    

@@ -30,9 +30,7 @@ include("barre_menu.php");
     <?php
   /* cette page affichera les informations d'un joueur en particulier en fonction du lien cliqué*/
   $nomJoueur = $_GET['nomJoueur'];
-echo $nomJoueur;
 $prenomJoueur = $_GET['prenomJoueur'];
-echo $prenomJoueur;
 $idJoueur = $_GET['idJoueur'];
 
 

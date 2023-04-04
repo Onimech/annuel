@@ -43,13 +43,12 @@ session_start();
         
     <?php
  $nomCoach = $_GET['nomCoach'];
- echo $nomCoach;
  $prenomCoach = $_GET['prenomCoach'];
- echo $prenomCoach;
- $IdCoach = $_GET['IdCoach'];
+ $idCoach = $_GET['idCoach'];
+ 
   
     //Ecriture de la requête 
-    $requete="SELECT * FROM `coach` JOIN `equipe` USING(IdCoach) where nomCoach like '$nomCoach' and prenomCoach like '$prenomCoach';";
+    $requete="SELECT * FROM `coach` JOIN `equipe` USING(idCoach) where nomCoach like '$nomCoach' and prenomCoach like '$prenomCoach';";
 
     //Envoi de la requête
  ?>
@@ -71,7 +70,6 @@ session_start();
         //Affichage des lignes de données, champ par champ
         echo "<tr>";
         //$name = $colonne['nomCoach'];
-  // echo '<td><h3><center><a href="second_page.php?name='.$name."</td></h3></a>"; rendre les colonnes cliquable pour accéder à la fiche coach (pareil pour joueur et équipe)
         echo '<td><h3><center>'.$colonne['prenomCoach'].'</h3></td>';
         echo '<td><h3><center>'.$colonne['nomCoach'].'</h3></td>';
 
@@ -150,7 +148,7 @@ session_start();
         $date_posted = date('Y-m-d H:i:s');
         $comment_post = $_POST['comment_post'];
         $requete_ins= $connexion->prepare("INSERT INTO `comment` (`member_id`, `date_posted`, `comment_post`, `idC`, `idE`,`idJ`) VALUES ( ?, ?, ?, ?, ?, ?)");
-        $requete_ins->execute([$member_id, $date_posted, $comment_post,$IdCoach,NULL,NULL]);
+        $requete_ins->execute([$member_id, $date_posted, $comment_post,$idCoach,NULL,NULL]);
                     
         if ($requete_ins->rowCount ()>0){
             echo"ajout avec succes";
@@ -160,7 +158,7 @@ session_start();
     }       
       //affichage des commentaires
       
-      $requete_commentaire = "SELECT * FROM comment where idC like $IdCoach ORDER BY date_posted DESC";
+      $requete_commentaire = "SELECT * FROM comment where idC like $idCoach ORDER BY date_posted DESC";
                   
    
   

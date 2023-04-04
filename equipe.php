@@ -31,12 +31,11 @@ include("barre_menu.php");
 /* cette page affichera les informations d'une équipe en particulier */
 
 $equipe = $_GET['nomEquipe'];
-echo $equipe ;
     //Connexion
    
     
     //Ecriture de la requête 
-    $requete="SELECT * FROM `equipe` JOIN `coach` using(IdCoach) where nomEquipe like '%$equipe%'";
+    $requete="SELECT * FROM `equipe` JOIN `coach` using(idCoach) where nomEquipe like '%$equipe%'";
     $requete_affJoueur ="SELECT * FROM `equipe` JOIN `joueur` USING(nomEquipe) where nomEquipe like '%$equipe%'";
     //Envoi de la requête
    
